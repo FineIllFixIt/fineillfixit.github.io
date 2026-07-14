@@ -24,7 +24,7 @@
           <rect x="2" y="2" width="28" height="28" rx="4" fill="none" stroke="currentColor" stroke-width="2"/>
           <path d="M9 21 L16 9 L23 21" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
         </svg>
-        <span class="brand-word">YOUR NAME</span>
+        <span class="brand-word">FINE I'LL FIX IT</span>
       </a>
       <button class="nav-toggle" id="nav-toggle" aria-label="Toggle project menu" aria-expanded="false">
         <span></span><span></span><span></span>

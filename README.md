@@ -11,7 +11,6 @@ assets/
   css/style.css      All styling (colors/fonts are CSS variables at the top)
   js/nav-data.js      The list of projects — edit this to add/remove/rename projects
   js/main.js          Builds the header + sidebar from nav-data.js on every page
-  img/favicon.svg
 ```
 
 ## Running locally
