@@ -20,7 +20,7 @@
   if (header) {
     header.innerHTML = `
       <a class="brand" href="index.html" aria-label="Home">
-        <img src="img/logo.png" width="28" height="28">
+        <img src="assets/img/logo.png" width="28" height="28">
         <span class="brand-word">FINE I'LL FIX IT</span>
       </a>
       <button class="nav-toggle" id="nav-toggle" aria-label="Toggle project menu" aria-expanded="false">
