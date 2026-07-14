@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Name — Projects</title>
+  <meta name="description" content="A collection of projects by Your Name.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="index.html">
+
+  <div id="site-header"></div>
+  <div id="site-sidebar"></div>
+
+  <main>
+    <span class="eyebrow">Portfolio</span>
+    <h1>Hi, I'm Your Name.</h1>
+    <p class="lede">
+      I build things and put them here. Browse the projects in the sidebar,
+      or scroll through the list below.
+    </p>
+
+    <hr class="rule">
+
+    <h2>Projects</h2>
+    <div class="project-grid" id="project-grid"></div>
+
+    <footer class="page-footer">
+      &copy; <span id="year"></span> Your Name. Built with plain HTML/CSS/JS.
+    </footer>
+  </main>
+
+  <script src="assets/js/nav-data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Build the project card grid from the same PROJECTS list used by the sidebar.
+    const grid = document.getElementById("project-grid");
+    grid.innerHTML = PROJECTS.map((p, i) => {
+      const num = String(i + 1).padStart(2, "0");
+      const tags = p.tags.map(t => `<span class="tag">${t}</span>`).join("");
+      return `
+        <a class="project-card" href="${p.file}">
+          <span class="idx">${num}</span>
+          <h3>${p.title}</h3>
+          <p>${p.blurb}</p>
+          <div class="tags">${tags}</div>
+        </a>`;
+    }).join("");
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

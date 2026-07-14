@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Three — Your Name</title>
+  <meta name="description" content="Details about Project Three.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<!--
+  IMPORTANT: data-page must match this file's name exactly.
+  That's how the sidebar knows to highlight this page as active.
+-->
+<body data-page="project-3.html">
+
+  <div id="site-header"></div>
+  <div id="site-sidebar"></div>
+
+  <main>
+    <span class="eyebrow">Project 03</span>
+    <h1>Project Three</h1>
+    <p class="lede">
+      One or two sentences describing what this project is and the problem it solves.
+    </p>
+
+    <div class="tags">
+      <span class="tag">React</span>
+      <span class="tag">Design</span>
+    </div>
+
+    <div class="btn-row">
+      <a class="btn primary" href="#" target="_blank" rel="noopener">Live demo</a>
+      <a class="btn" href="#" target="_blank" rel="noopener">Source code</a>
+    </div>
+
+    <div class="media-placeholder">Screenshot / demo goes here</div>
+
+    <h2>Overview</h2>
+    <p>
+      Replace this paragraph with a real description of the project: what it does,
+      who it's for, and why you built it.
+    </p>
+
+    <h2>How it works</h2>
+    <p>
+      Replace this with a short walkthrough of the architecture or approach —
+      whatever helps a visitor understand what they're looking at.
+    </p>
+
+    <h2>What I learned</h2>
+    <p>
+      Optional section — a good place to talk about challenges, trade-offs,
+      or things you'd do differently next time.
+    </p>
+
+    <footer class="page-footer">
+      &copy; <span id="year"></span> Your Name.
+    </footer>
+  </main>
+
+  <script src="assets/js/nav-data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
