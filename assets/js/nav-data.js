@@ -13,19 +13,11 @@ const PROJECTS = [
   {
     file: "project-1.html",
     title: "Project One",
-    blurb: "A one-line description of what this project does and why you built it.",
-    tags: ["JavaScript", "API"]
+    blurb: "A one-line description of what this project does and why you built it."
   },
   {
-    file: "project-2.html",
-    title: "Project Two",
-    blurb: "A one-line description of what this project does and why you built it.",
-    tags: ["Python", "CLI"]
-  },
-  {
-    file: "project-3.html",
-    title: "Project Three",
-    blurb: "A one-line description of what this project does and why you built it.",
-    tags: ["React", "Design"]
+    file: "ImageCrypto.html",
+    title: "Image Cryptography",
+    blurb: "I build my own encryption algorithm that uses pictures to encrypt text."
   }
 ];

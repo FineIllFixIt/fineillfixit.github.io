@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Cryptography - Fine I'll Fix It</title>
+  <meta name="description" content="A project where I created an ecryption algorithm using pictures">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<!--
+  IMPORTANT: data-page must match this file's name exactly.
+  That's how the sidebar knows to highlight this page as active.
+-->
+<body data-page="project-2.html">
+
+  <div id="site-header"></div>
+  <div id="site-sidebar"></div>
+
+  <main>
+    <span class="eyebrow">Image Cryptography</span>
+    <h1>Image Cryptography</h1>
+    <p class="lede">
+      I invented my own encryption algorithm that uses pictures to encrypt text.
+    </p>
+
+    <form>
+      <label for="image">Image Key: </label>
+      <input type="file" id="image" name="image" accept="image/*"><br>
+      <label for="xCoord">X Coordinate: </label>
+      <input type="number" id="xCoord" name="xCoord" min="0" max="355"><br>
+      <label for="yCoord">Y Coordinate: </label>
+      <input type="number" id="yCoord" name="yCoord" min="0" max="355">
+      <div id="cryptoText" style="display: flex; width: 100%">
+        <div style="margin-right: 20px; height: 7em; width: 40%;">
+          <label for="plainText">Plain Text: </label><br>
+          <textarea id="plainText" name="plainText" style="height:100%; width: 100%"></textarea>
+        </div>
+        <div style="height: 7em; width: 40%;">
+          <label for="cipherText">Cipher Text: </label><br>
+          <textarea id="cipherText" name="cipherText" style="height:100%; width: 100%"></textarea>
+        </div>
+      </div>
+    </form>
+
+    <h2>Overview</h2>
+    <p>
+      I invented my own encryption algorith that uses the pixel values in an image to change the characters in some text. This allows me to encrypt and decrypt the text as long as you have the same image and starting (x,y) coordinates.
+    </p>
+
+    <h2>How it works</h2>
+    <p>
+      <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/dHSgo6FJxjg?si=oz-X8XoZsKb38Ri7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </p>
+  </main>
+
+  <script src="assets/js/nav-data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
