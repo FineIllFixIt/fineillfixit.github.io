@@ -3,39 +3,42 @@ const xStart = document.getElementById("xCoord");
 const yStart = document.getElementById("yCoord");
 const plainTextInput = document.getElementById("plainText");
 const cipherTextInput = document.getElementById("cipherText");
+const alphabet = Array.from({ length: 95 }, (_, i) => String.fromCharCode(i + 32)).join('');
+const imageDim = alphabet.length + 255
 
 let image;
-let imageArray;
+let imageArray = [];
 imageInput.addEventListener('input', () => {
     if (imageInput.files.length > 0) {
         const file = event.target.files[0];
         if (!file) return;
 
-        // 2. Read the file as a data URL
         const reader = new FileReader();
         reader.onload = function(e) {
             image = new Image();
+            image.src = e.target.result
             image.onload = function() {
-                
-                // 3. Create an off-screen canvas matching the image size
                 const canvas = document.createElement('canvas');
+                canvas.width = imageDim;
+                canvas.height = imageDim;
+                
                 const ctx = canvas.getContext('2d');
-                canvas.width = image.width;
-                canvas.height = image.height;
+                ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
 
-                // 4. Draw image and capture pixel data
-                ctx.drawImage(image, 0, 0);
+                const resizedDataUrl = canvas.toDataURL('image/jpeg', 0.8);
+
                 const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-                const pixels = imageData.data; // This is a Uint8ClampedArray
+                const pixels = imageData.data;
 
-                // 5. Example: Read the top-left pixel (x=0, y=0)
-                const r = pixels[0];
-                const g = pixels[1];    
-                const b = pixels[2];
-                const a = pixels[3];
-
-                console.log(`Top-Left Pixel Color: rgba(${r}, ${g}, ${b}, ${a})`);
-                console.log(`Total array length (width * height * 4): ${pixels.length}`);
+                for (r = 0; r < imageDim; r++) {
+                    imageArray[r] = []
+                    for (c = 0; c < imageDim; c++) {
+                        imageArray[r][c] = []
+                        for (i = 0; i < 3; i++) {
+                            imageArray[r][c][i] = pixels[(r * imageDim) + (c * 4) + i]
+                        }
+                    }
+                }
             };
             image.src = e.target.result;
         };
@@ -44,3 +47,66 @@ imageInput.addEventListener('input', () => {
         image = null;
     }
 });
+
+plainTextInput.addEventListener("input", () => {
+    if (plainTextInput.value != "" && xStart.value != "" && yStart.value != "" && imageArray != []) {
+        cipherTextInput.value = encrypt(plainTextInput.value, imageArray);
+    } else {
+        
+    }
+});
+
+cipherTextInput.addEventListener("input", () => {
+    if (cipherTextInput.value != "" && xStart.value != "" && yStart.value != "" && imageArray != []) {
+        plainTextInput.value = decrypt(cipherTextInput.value, imageArray);
+    } else {
+
+    }
+});
+
+function encrypt(text, img) {
+    let cipher = "";
+    let x = parseInt(xStart.value);
+    let y = parseInt(yStart.value);
+    for (i = 0; i < text.length; i += 2) {
+        let currPixel = img[x][y];
+        let red = parseInt(currPixel[0]);
+        let green = parseInt(currPixel[1]);
+        let blue = parseInt(currPixel[2]);
+        let charVal = alphabet.indexOf(text[i]);
+        let cipherVal = (charVal + red) % alphabet.length;
+        cipher += alphabet[cipherVal];
+        if (i+1 < text.length) {
+            let charVal2 = alphabet.indexOf(text[i+1]);
+            let cipherVal2 = (charVal2 + green) % alphabet.length;
+            cipher += alphabet[cipherVal2];
+            x = (charVal + blue) % imageDim;
+            y = (charVal2 + blue) % imageDim;
+        }
+    }
+    return cipher;
+}
+
+function decrypt(text, img) {
+    const mod = (n, d) => ((n % d) + d) % d;
+    let plain = "";
+    let x = parseInt(xStart.value);
+    let y = parseInt(yStart.value);
+    for (i = 0; i < text.length; i += 2) {
+        let currPixel = img[x][y];
+        let red = parseInt(currPixel[0]);
+        let green = parseInt(currPixel[1]);
+        let blue = parseInt(currPixel[2]);
+        let charVal = alphabet.indexOf(text[i]);
+        let plainVal = mod((charVal - red), alphabet.length);
+        plain += alphabet[plainVal];
+        if (i+1 < text.length) {
+            let charVal2 = alphabet.indexOf(text[i+1]);
+            let plainVal2 = mod((charVal2 - green), alphabet.length);
+            plain += alphabet[plainVal2];
+            x = (plainVal + blue) % imageDim;
+            y = (plainVal2 + blue) % imageDim;
+        }
+    }
+    return plain;
+}

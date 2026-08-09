@@ -11,10 +11,6 @@
   <link rel="icon" type="image/svg+xml" href="assets/img/logo.png">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<!--
-  IMPORTANT: data-page must match this file's name exactly.
-  That's how the sidebar knows to highlight this page as active.
--->
 <body data-page="project-2.html">
 
   <div id="site-header"></div>
@@ -26,7 +22,9 @@
     <p class="lede">
       I invented my own encryption algorithm that uses pictures to encrypt text.
     </p>
-
+    <div class="form-error">
+      <p>There are some missing inputs you need to fill out before encrypting or decrypting text.</p>
+    </div>
     <form>
       <label for="image">Image Key: </label>
       <input type="file" id="image" name="image" accept="image/*"><br>
@@ -60,6 +58,5 @@
   <script src="assets/js/nav-data.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/image-crypto.js"></script>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
