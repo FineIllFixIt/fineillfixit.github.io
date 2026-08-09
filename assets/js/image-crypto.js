@@ -49,18 +49,28 @@ imageInput.addEventListener('input', () => {
 });
 
 plainTextInput.addEventListener("input", () => {
-    if (plainTextInput.value != "" && xStart.value != "" && yStart.value != "" && imageArray != []) {
+    if (xStart.value != "" && yStart.value != "" && imageArray != []) {
         cipherTextInput.value = encrypt(plainTextInput.value, imageArray);
+        document.querySelectorAll(".form-error").forEach(element => {
+            element.classList.add("hidden");
+        });
     } else {
-        
+        document.querySelectorAll(".form-error").forEach(element => {
+            element.classList.remove("hidden");
+        });
     }
 });
 
 cipherTextInput.addEventListener("input", () => {
-    if (cipherTextInput.value != "" && xStart.value != "" && yStart.value != "" && imageArray != []) {
+    if (xStart.value != "" && yStart.value != "" && imageArray != []) {
         plainTextInput.value = decrypt(cipherTextInput.value, imageArray);
+        document.querySelectorAll(".form-error").forEach(element => {
+            element.classList.add("hidden");
+        });
     } else {
-
+        document.querySelectorAll(".form-error").forEach(element => {
+            element.classList.remove("hidden");
+        });
     }
 });
 

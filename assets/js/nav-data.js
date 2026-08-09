@@ -11,9 +11,9 @@
  */
 const PROJECTS = [
   {
-    file: "project-1.html",
-    title: "Project One",
-    blurb: "A one-line description of what this project does and why you built it."
+    file: "ConwaysSimulation.html",
+    title: "Conway's Simulation of Life",
+    blurb: "I fixed Conway's Game of Life by turning it into an actual game."
   },
   {
     file: "ImageCrypto.html",
