@@ -23,6 +23,38 @@
     <p>Visit the github repo for this project <a style="color: blue;" href="https://github.com/FineIllFixIt/ConwaysSimulationOfLife">here</a>.</p>
     
     <hr class="rule">
+    <h3>Game Settings: </h3>
+    <div class="form-error hidden">
+      <p>There are some missing or invalid inputs you need to fill out.</p>
+    </div>
+    <form>
+      <label for="playerNum">Number of Players: </label>
+      <input type="number" id="playerNum" name="playerNum" min="2" max="10" value="2"><br>
+      <label for="turnsPerSwitch">Turns Per Switch: </label>
+      <input type="number" id="turnsPerSwitch" name="turnsPerSwitch" min="5" max="100" value="20"><br>
+      <label for="switchPerRound">Switches Per Round: </label>
+      <input type="number" id="switchPerRound" name="switchPerRound" min="1" max="10" value="1"><br>
+      <label for="roundsPerGame">Rounds Per Game: </label>
+      <input type="number" id="roundsPerGame" name="roundsPerGame" min="1" max="50" value="5"><br>
+      <label for="simStepsPerRound">Simulation Steps Per Round: </label>
+      <input type="number" id="simStepsPerRound" name="simStepsPerRound" min="5" max="500" value="50"><br>
+      <label for="gridDim">Grid Height / Width: </label>
+      <input type="number" id="gridDim" name="gridDim" min="20" max="200" value="75"><br>
+      <label for="agressive">Agressive Players: </label>
+      <input type="checkbox" id="agressive" name="agressive" unchecked>
+    </form>
+    <div id="gameSection">
+      <button id="start_button">Start</button>
+      <h3 id="playerScoresHeader"></h3>
+      <div id="playerScores"></div>
+      <h3 id="gameStatus" style="margin-top: 20px;"></h3>
+      <div id="gameboardWrapper">
+        <canvas id="gameboard" style="background-color: #123456; width: 100%; aspect-ratio: 1 / 1;"></canvas>
+        <div id="gameboardOverlay">
+            <h1>Make sure all settings have been filled out before starting.</h1>
+        </div>
+      </div>
+    </div>
 
     <h2>Overview</h2>
     <p>
@@ -31,10 +63,11 @@
     </p>
 
     <h2>How it works</h2>
-    <iframe width="560" height="315" src="https://www.youtube.com/watch?v=rhPmd5V0sWM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/rhPmd5V0sWM?si=-8D_J6mbG6Ak27qS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
   </main>
 
   <script src="assets/js/nav-data.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/conways-simulation.js"></script>
 </body>
 </html>
