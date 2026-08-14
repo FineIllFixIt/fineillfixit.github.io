@@ -280,7 +280,6 @@ function getUniqueRgbColors(n) {
   const colors = ["rgb(255,255,255)"];
   for (let i = 0; i < n; i++) {
     const hue = (i * (360 / n)) % 360;
-    // Using 70% saturation and 50% lightness for vibrant, clear colors
     colors.push(`rgb(${hslToRgb(hue, 0.7, 0.5)})`);
   }
   return colors;
@@ -410,12 +409,6 @@ canvas.addEventListener("mousemove", async (event) => {
             }
         }
         if (simFinished) {
-            //win_text = mainHeader.render("Player //" + str(maxPlayer + 1) + " Wins!", True, (0,0,0))
-            //score_text = mainHeader.render("Score: " + str(maxScore), True, (0,0,0))
-            //rect = pygame.Rect((min((gridDim*blockSize/2) - (win_text.get_width() / 2), (gridDim*blockSize/2) - (score_text.get_width() / 2)) - 25), 175, max(win_text.get_width(), score_text.get_width()) + 50, 125)
-            //pygame.draw.rect(screen, (200, 200, 200), rect)
-            //screen.blit(win_text, ((gridDim*blockSize/2) - (win_text.get_width() / 2), 200))
-            //screen.blit(score_text, ((gridDim*blockSize/2) - (score_text.get_width() / 2), 250))
             playing = false;
             let overlay = document.getElementById("gameboardOverlay");
             overlay.innerHTML = "";
