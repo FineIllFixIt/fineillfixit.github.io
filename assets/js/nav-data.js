@@ -19,5 +19,10 @@ const PROJECTS = [
     file: "ImageCrypto.html",
     title: "Image Cryptography",
     blurb: "I build my own encryption algorithm that uses pictures to encrypt text."
+  },
+  {
+    file: "WikiSpeedrunBot.html",
+    title: "Wikipedia Speedrunning Bot",
+    blurb: "I build a bot that can speedrun wikipedia really fast."
   }
 ];

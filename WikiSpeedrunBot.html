@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wikipedia Speedrun Bot - Fine I'll Fix It</title>
+  <meta name="description" content="A project where I created a bot that speedruns wikipedia">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    #downloadBtn {
+        padding: 10px;
+        background-color: #0099ff;
+        color: white;
+        border-radius: 10px;
+        border: 1px solid black;
+        font-family: var(--font-body);
+        font-size: 16px;
+        font-weight: bold;
+    }
+    #downloadBtn:hover {
+        cursor: pointer;
+    }
+  </style>
+</head>
+<body data-page="project-2.html">
+
+  <div id="site-header"></div>
+  <div id="site-sidebar"></div>
+
+  <main>
+    <span class="eyebrow">Wikipedia Speedrun Bot</span>
+    <h1>Wikipedia Speedrun Bot</h1>
+    <p class="lede">
+      I created a wikipedia speedruning bot that can go between any two english wikipedia pages in just a few seconds.
+    </p>
+    <p>Visit the github repo for this project <a style="color: blue;" href="https://github.com/FineIllFixIt/WikipediaSpeedrunBot">here</a>.</p>
+    
+    <hr class="rule">
+
+    <h2>Overview</h2>
+    <p>
+      I created a wikipedia speedrunning bot. I mapped the entirety of wikipedia then use a bidirectional breadth first search to find a path between any two pages. I then used autotesting software to control a web browser to navigate the path found. It typically only takes a few seconds for the bot to go between any two pages.
+    </p>
+
+    <h2>Download the zip file</h2>
+    <p>even the compressed version of the wikimap file was too large to push to github so you can download the full zip at this google drive link:</p>
+    <a href="https://drive.google.com/drive/folders/1mJkIC8W4X7yF23Cu8Ab2xK1VjXTFifhP?usp=sharing">Download Here</a>
+
+    <h2>How it works</h2>
+    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8NP6omKbnmM?si=7NkjLcygAHZeTY1u" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </main>
+
+  <script src="assets/js/nav-data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
